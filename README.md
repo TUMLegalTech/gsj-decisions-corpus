@@ -233,8 +233,10 @@ downgraded into a silent local re-embed.
 ### No egress?
 
 Some clusters cannot reach the internet at all. Download the eight assets
-somewhere that can, copy them to the cluster host in one directory, and point
-the site at the manifest **on disk** instead:
+somewhere that can, copy them to the installer host in one directory, make the
+manifest private (`chmod 600 vectors.json` — the installer refuses a
+world-readable protected input), and point the site at the manifest **on disk**
+instead:
 
 ```json
 "corpus": {
